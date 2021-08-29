@@ -22,6 +22,8 @@
   .colum3 {
     width: 100% !important;
   }
+  .modal-contain {
+    top: 0px !important;}
 }
 
 /* chung */

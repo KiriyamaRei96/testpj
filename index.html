@@ -43,7 +43,22 @@
             <li class="js-phone-open">
               <a href="#Contact">Contact</a>
             </li>
-            <li class="js-phone-open"><a href="#"> Merchandise</a></li>
+            <li class="subnav">
+              <a class="js-more" href="#"
+                >More <i class="icofont-caret-down"></i>
+              </a>
+              <ul class="more">
+                <li>
+                  <a class="js-close" href="#">Merchandise</a>
+                </li>
+                <li>
+                  <a class="js-close" href="#">Extras</a>
+                </li>
+                <li>
+                  <a class="js-close" href="#">Media</a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </ul>
         <div class="sea"><i class="icofont-search"></i></div>
@@ -74,8 +89,8 @@
                 nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                 commodo consequat.
               </p>
-              <div class="row row-margin">
-                <div class="colum center colum3">
+              <div class="row mt16 row-margin">
+                <div class="mobileitem mt16 colum center colum3">
                   <p class="member-name">Loki</p>
                   <img
                     class="member-img"
@@ -83,7 +98,7 @@
                     alt="loki"
                   />
                 </div>
-                <div class="colum center colum3">
+                <div class="mobileitem mt16 colum center colum3">
                   <p class="member-name">Sylve</p>
                   <a href="https://animetvn.com/">
                     <img
@@ -93,7 +108,7 @@
                       alt="sylve"
                   /></a>
                 </div>
-                <div class="colum center colum3">
+                <div class="mobileitem mt16 colum center colum3">
                   <p class="member-name">Classic loki</p>
                   <img
                     class="member-img"
@@ -112,8 +127,8 @@
                   <li class="soldout">October <span>sold out</span></li>
                   <li class="on-stock">November <span>3</span></li>
                 </ul>
-                <div class="row row-margin">
-                  <div class="colum colum3">
+                <div class="row mt16 row-margin">
+                  <div class="mobileitem mt16 colum colum3">
                     <img
                       src="https://www.w3schools.com/w3images/newyork.jpg "
                       alt=""
@@ -128,7 +143,7 @@
                       <button class="buy btn js-open-modal">buy now</button>
                     </div>
                   </div>
-                  <div class="colum colum3">
+                  <div class="mobileitem mt16 colum colum3">
                     <img
                       src="https://www.w3schools.com/w3images/paris.jpg "
                       alt=""
@@ -143,7 +158,7 @@
                       <button class="buy btn js-open-modal">buy now</button>
                     </div>
                   </div>
-                  <div class="colum colum3">
+                  <div class="mobileitem mt16 colum colum3">
                     <img
                       src="https://www.w3schools.com/bootstrap/sanfran.jpg "
                       alt=""
@@ -167,44 +182,59 @@
               <div class="section clear">
                 <h2 class="about-heading">CONTACT</h2>
                 <p class="about-slogen">Fan? Drop a note!</p>
-                <div class="row row-margin">
-                  <div class="colum colum2 contact-if">
+                <div class="row mt16 row-margin">
+                  <div class="colum mobileitem colum2 contact-if">
                     <p><i class="icofont-google-map"></i>Chicago, US</p>
-                    <p><i class="icofont-phone"></i>Phone: +00 151515</p>
-                    <p><i class="icofont-email"></i>Email: mail@mail.com</p>
+                    <p>
+                      <i class="icofont-phone"></i>Phone:<a
+                        href="tel:+00 151515"
+                        >+00 151515</a
+                      >
+                    </p>
+                    <p>
+                      <i class="icofont-email"></i>Email:<a
+                        href="mailto:mail@mail.com"
+                        >mail@mail.com</a
+                      >
+                    </p>
                   </div>
-                  <form action="">
-                    <div class="clear colum2">
-                      <div class="colum colum2">
-                        <input
-                          type="text"
-                          placeholder="Name"
-                          required
-                          class="contact"
-                        />
-                      </div>
-                      <div class="colum colum2">
-                        <input
-                          type="email"
-                          placeholder="Email"
-                          required
-                          class="contact"
-                        />
-                      </div>
-
-                      <div class="colum columfull">
-                        <div class="message">
+                  <div class="clear mobileitem colum colum2">
+                    <form action="">
+                      <div class="row row-margin">
+                        <div class="colum mobileitem colum2">
                           <input
-                            class="contact"
                             type="text"
+                            placeholder="Name"
                             required
-                            placeholder="Message"
+                            class="contact"
+                          />
+                        </div>
+                        <div class="colum mb-mt7 mobileitem colum2">
+                          <input
+                            type="email"
+                            placeholder="Email"
+                            required
+                            class="contact"
                           />
                         </div>
                       </div>
-                    </div>
-                    <button class="send btn" type="submit">Send</button>
-                  </form>
+
+                      <div class="row row-margin">
+                        <div class="colum columfull">
+                          <div class="message">
+                            <input
+                              class="contact"
+                              type="text"
+                              required
+                              placeholder="Message"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <button class="send btn" type="submit">Send</button>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -262,6 +292,7 @@
     </div>
   </body>
   <script>
+    const mbmore = document.querySelector(".js-more");
     var closenavs = document.querySelectorAll(".js-close");
     var phonemore = document.querySelector(".js-phonemore");
     var phoneopens = document.querySelectorAll(".js-phone-open");
@@ -291,9 +322,9 @@
     function close() {
       phonemore.style.display = "none";
     }
-    // function shownav() {
-    //   phonemore.classList.add("grid");
-    // }
+
+    // function(event.preventDefault);
+
     for (const buyBtn of buyBtns) {
       buyBtn.addEventListener("click", openticket);
     }
@@ -301,6 +332,9 @@
       closenav.addEventListener("click", close);
     }
     // phoneopen.addEventListener("click", shownav);
+    mbmore.addEventListener("click", function (event) {
+      event.preventDefault();
+    });
     modalclose.addEventListener("click", closeticket);
     modal.addEventListener("click", closeticket);
     modalcontain.addEventListener("click", function (event) {
